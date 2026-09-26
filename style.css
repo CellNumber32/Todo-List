@@ -1,0 +1,152 @@
+:root{
+    /* Fonts */
+    --poppins: "Poppins", sans-serif;
+    --andika: "Andika", sans-serif;
+
+    /* Colors */
+    --bgColor: #1B1B1B;
+    --fontColor: #F2F3F4;
+    --btnBg: #2B2B23; 
+    --todoInputFont: #F6FFEA;
+    --todoInputBg: hsl(227, 18%, 40%);
+    --todoBg: #272727;
+    --todoFont: #FFFFF5;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    background-color: var(--bgColor);
+}
+body{
+    color: var(--fontColor)
+}
+
+.main{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading{
+    font: var(--poppins);
+    font-size: 36px;
+    font-weight: 700;
+    font-style: italic;
+    margin: 30px 30px 15px 30px;
+}
+
+.todoInputWrapper{
+    display: flex;
+
+    width: 400px;
+    position: relative;
+    max-width: 100%;
+}
+
+.addTodoBtn{
+    height: 80%;
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    right: 3px;
+    top: 10%;
+    color: var(--btnFont);
+    background-color: var(--btnBg);
+    outline: none;
+    border: 1px solid rgb(152, 148, 148);
+    cursor: pointer;
+}
+#todoInput{
+    font: var(--andika);
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    border-radius: 50px;
+    padding: 6px 35px 6px 10px;
+    width: 100%;
+    color: var(--todoInputFont);
+    background-color: var(--todoInputBg);
+    outline: none;
+    border: 1px solid rgba(79, 102, 121, 0.458);
+}
+
+
+
+.todosList{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.todoItem{
+    list-style-type: none;   
+    width: 400px;
+    background-color: var(--todoBg);
+    border-radius: 10px;
+}
+.todo{
+    padding: 5px 0px 5px 10px;
+    width: 85%;    
+    color: var(--todoFont);
+    word-wrap: wrap;
+    transition: 0.2s;
+}
+
+.customCheckbox{
+    cursor: pointer;
+}
+
+.todoItem{
+    display: flex;
+    align-items: center;
+}
+
+.todoCheckbox:checked{
+    content: '';
+    background-color: #07348e;
+    box-shadow: 0 0 8px rgb(31, 33, 45);
+    background-image: url(checkbox.svg);
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.todoCheckbox{ 
+    appearance: none;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    height: 22px;
+    width: 22px;
+    border-radius: 50px;
+    border: 1px solid rgb(178, 204, 224);
+    margin-bottom: 3px;
+    margin-left: 5px;
+    transition: 0.2s ease;
+}
+
+.todoCheckbox[type="checkbox"]:checked ~ .todo{
+    text-decoration: line-through;
+}
+
+.deleteTodoBtn{
+    margin-right: 7px;
+}
+
+.deleteTodoBtn:hover{
+    color: #cb1a20;
+}
+
+.deleteTodoBtn:active{
+    color: #e72e2e;
+}
+
